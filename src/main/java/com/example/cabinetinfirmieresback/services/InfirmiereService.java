@@ -12,7 +12,7 @@ public interface InfirmiereService {
 
     public Infirmiere postInfirmiere(Infirmiere infirmiere);
 
-    public Infirmiere putIfirmiere(Infirmiere infirmiere);
+    public Infirmiere putInfirmiere(Infirmiere infirmiere);
 
     public void deleteInfirmiere(Integer id);
 }

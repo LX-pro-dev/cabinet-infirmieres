@@ -31,7 +31,7 @@ public class InfirmiereController {
     }
     @PutMapping
     public Infirmiere putInfirmiere(@RequestBody Infirmiere infirmiere) {
-        return infirmiereService.putIfirmiere(infirmiere);
+        return infirmiereService.putInfirmiere(infirmiere);
     }
 
     @DeleteMapping("{id}")

@@ -10,14 +10,14 @@ import javax.persistence.*;
 public class Infirmiere {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @OneToOne
     @JoinColumn(name = "adresse_id")
     private Adresse adresse;
 
-    @Column(name= "numero_profesiionel")
+    @Column(name= "numero_professionnel")
     private Integer numeroProfessionel;
 
     @Column(name = "nom")
