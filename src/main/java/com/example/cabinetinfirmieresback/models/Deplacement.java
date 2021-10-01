@@ -3,7 +3,7 @@ package com.example.cabinetinfirmieresback.models;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name= "deplacement")
@@ -19,7 +19,7 @@ public class Deplacement {
     private Patient patient;
 
     @Column(name= "date")
-    private LocalDateTime date;
+    private Date date;
 
     @Column(name = "cout")
     private Double cout;
