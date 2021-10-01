@@ -26,11 +26,20 @@ CREATE TABLE `adresse` (
   `id` int NOT NULL AUTO_INCREMENT,
   `numero` varchar(45) NOT NULL,
   `rue` varchar(45) NOT NULL,
-  `cp` int NOT NULL,
+  `cp` varchar(10) NOT NULL,
   `ville` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `adresse`
+--
+
+LOCK TABLES `adresse` WRITE;
+/*!40000 ALTER TABLE `adresse` DISABLE KEYS */;
+/*!40000 ALTER TABLE `adresse` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `deplacement`
@@ -54,6 +63,15 @@ CREATE TABLE `deplacement` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `deplacement`
+--
+
+LOCK TABLES `deplacement` WRITE;
+/*!40000 ALTER TABLE `deplacement` DISABLE KEYS */;
+/*!40000 ALTER TABLE `deplacement` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `infirmiere`
 --
 
@@ -63,19 +81,28 @@ DROP TABLE IF EXISTS `infirmiere`;
 CREATE TABLE `infirmiere` (
   `id` int NOT NULL AUTO_INCREMENT,
   `adresse_id` int NOT NULL,
-  `numeroProfessionnel` int NOT NULL,
+  `numero_professionnel` int NOT NULL,
   `nom` varchar(45) NOT NULL,
   `prenom` varchar(45) NOT NULL,
-  `telPro` int NOT NULL,
-  `telPerso` int DEFAULT NULL,
+  `tel_pro` varchar(15) NOT NULL,
+  `tel_perso` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `telPro_UNIQUE` (`telPro`),
-  UNIQUE KEY `numeroProfessionnel_UNIQUE` (`numeroProfessionnel`),
-  UNIQUE KEY `telPerso_UNIQUE` (`telPerso`),
+  UNIQUE KEY `telPro_UNIQUE` (`tel_pro`),
+  UNIQUE KEY `numeroProfessionnel_UNIQUE` (`numero_professionnel`),
+  UNIQUE KEY `telPerso_UNIQUE` (`tel_perso`),
   KEY `fk_infirmiere_adresse1_idx` (`adresse_id`),
   CONSTRAINT `fk_infirmiere_adresse1` FOREIGN KEY (`adresse_id`) REFERENCES `adresse` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `infirmiere`
+--
+
+LOCK TABLES `infirmiere` WRITE;
+/*!40000 ALTER TABLE `infirmiere` DISABLE KEYS */;
+/*!40000 ALTER TABLE `infirmiere` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `patient`
@@ -90,17 +117,26 @@ CREATE TABLE `patient` (
   `infirmiere_id` int DEFAULT NULL,
   `nom` varchar(45) NOT NULL,
   `prenom` varchar(45) NOT NULL,
-  `dateDeNaissance` date NOT NULL,
+  `date_de_naissance` date NOT NULL,
   `sexe` enum('Homme','Femme','Autre') NOT NULL,
-  `numeroSecuriteSocial` bigint NOT NULL,
+  `numero_securite_sociale` bigint NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `numeroSecuriteSocial_UNIQUE` (`numeroSecuriteSocial`),
+  UNIQUE KEY `numeroSecuriteSocial_UNIQUE` (`numero_securite_sociale`),
   KEY `fk_patient_adresse_idx` (`adresse_id`),
   KEY `fk_patient_infirmiere1_idx` (`infirmiere_id`),
   CONSTRAINT `fk_patient_adresse` FOREIGN KEY (`adresse_id`) REFERENCES `adresse` (`id`) ON DELETE SET NULL,
   CONSTRAINT `fk_patient_infirmiere1` FOREIGN KEY (`infirmiere_id`) REFERENCES `infirmiere` (`id`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient`
+--
+
+LOCK TABLES `patient` WRITE;
+/*!40000 ALTER TABLE `patient` DISABLE KEYS */;
+/*!40000 ALTER TABLE `patient` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -111,4 +147,4 @@ CREATE TABLE `patient` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30 15:29:00
+-- Dump completed on 2021-10-01  9:39:11
