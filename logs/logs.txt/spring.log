@@ -898,3 +898,6 @@ org.hibernate.TypeMismatchException: Provided id of the wrong type for class com
 2021-09-30 16:55:02.422 DEBUG 16504 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
 2021-09-30 16:55:02.423 DEBUG 16504 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [Adresse(id=9, numero=1, rue=la rue, cp=93290, ville=Labassebien)]
 2021-09-30 16:55:02.427 DEBUG 16504 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-09-30 17:02:36.864  INFO 16504 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-30 17:02:36.869  INFO 16504 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-09-30 17:02:36.890  INFO 16504 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
