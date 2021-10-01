@@ -6,8 +6,9 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 enum Sexe {
-    homme,
-    femme;
+    Homme,
+    Femme,
+    Autre;
 }
 
 @Entity
@@ -35,7 +36,7 @@ public class Patient {
     @Column(name= "date_de_naissance")
     private LocalDateTime dateDeNaissance;
 
-    @Column(columnDefinition = "ENUM('homme','femme')")
+    @Column(columnDefinition = "ENUM('Homme','Femme','Autre')")
     @Enumerated(EnumType.STRING)
     private Sexe sexe;
 

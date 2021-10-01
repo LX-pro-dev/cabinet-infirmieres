@@ -27,9 +27,9 @@ public class Infirmiere {
     private String prenom;
 
     @Column(name = "tel_pro")
-    private Integer telPro;
+    private String telPro;
 
     @Column(name= "tel_perso")
-    private Integer telPerso;
+    private String telPerso;
 
 }

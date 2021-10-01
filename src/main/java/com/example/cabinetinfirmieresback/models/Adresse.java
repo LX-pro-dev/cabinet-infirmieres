@@ -14,6 +14,6 @@ public class Adresse {
 
     private String numero;
     private String rue;
-    private Integer cp;
+    private String cp;
     private String ville;
 }

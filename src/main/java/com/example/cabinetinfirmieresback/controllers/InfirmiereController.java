@@ -20,7 +20,7 @@ public class InfirmiereController {
         return infirmiereService.findAll();
     }
 
-    @GetMapping
+    @GetMapping("{id}")
     public Infirmiere findById(@PathVariable Integer id) {
         return infirmiereService.findById(id);
     }
