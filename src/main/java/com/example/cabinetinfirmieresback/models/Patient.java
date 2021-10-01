@@ -3,7 +3,7 @@ package com.example.cabinetinfirmieresback.models;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 enum Sexe {
     Homme,
@@ -16,7 +16,7 @@ enum Sexe {
 @Data
 public class Patient {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     @OneToOne
@@ -34,13 +34,13 @@ public class Patient {
     private String prenom;
 
     @Column(name= "date_de_naissance")
-    private LocalDateTime dateDeNaissance;
+    private Date dateDeNaissance;
 
     @Column(columnDefinition = "ENUM('Homme','Femme','Autre')")
     @Enumerated(EnumType.STRING)
     private Sexe sexe;
 
-    @Column(name= "numero_securite_social")
-    private Long numeroSecuriteSocial;
+    @Column(name= "numero_securite_sociale")
+    private Long numeroSecuriteSociale;
 
 }

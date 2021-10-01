@@ -24,7 +24,7 @@ public class InfirmiereServiceImpl implements InfirmiereService {
     public Infirmiere postInfirmiere(Infirmiere infirmiere) { return this.infirmiereRepository.save(infirmiere); }
 
     @Override
-    public Infirmiere putIfirmiere(Infirmiere infirmiere) { return this.infirmiereRepository.save(infirmiere); }
+    public Infirmiere putInfirmiere(Infirmiere infirmiere) { return this.infirmiereRepository.save(infirmiere); }
 
     @Override
     public void deleteInfirmiere(Integer id) { this.infirmiereRepository.deleteById(id); }
